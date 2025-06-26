@@ -13,9 +13,9 @@ This project runs the DeepCool Digital Linux display software for the CH170 case
 
 ### Build from source
 
-$ git clone https://github.com/Saltyfunnel/deepcool-digital-linux.git
-$ cd deepcool-digital-linux
-$ cargo build --release
+git clone https://github.com/Saltyfunnel/deepcool-digital-linux.git
+cd deepcool-digital-linux
+cargo build --release
 
 ### Install binary
 
