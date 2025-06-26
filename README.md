@@ -63,23 +63,4 @@ Cargo.lock
 
 ---
 
-## How to push your local code to GitHub:
 
-1. Initialize repo if not done:
-
-$ git init
-$ git remote add origin https://github.com/Saltyfunnel/deepcool-digital-linux.git
-
-2. Add files and commit:
-
-$ git add .
-$ git commit -m "Initial commit with DeepCool Digital Linux custom scripts"
-
-3. Push to GitHub:
-
-$ git branch -M main
-$ git push -u origin main
-
----
-
-If you want, I can help you with any automation scripts or further instructions. Just ask!
