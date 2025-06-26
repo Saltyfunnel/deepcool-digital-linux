@@ -13,20 +13,19 @@ This project runs the DeepCool Digital Linux display software for the CH170 case
 
 ### Build from source
 
-```bash
-git clone https://github.com/Saltyfunnel/deepcool-digital-linux.git
-cd deepcool-digital-linux
-cargo build --release
+$ git clone https://github.com/Saltyfunnel/deepcool-digital-linux.git
+$ cd deepcool-digital-linux
+$ cargo build --release
 
-Install binary
+### Install binary
 
-sudo mkdir -p /opt/deepcool-digital
-sudo cp target/release/deepcool-digital-linux /opt/deepcool-digital/
-sudo chmod +x /opt/deepcool-digital/deepcool-digital-linux
+$ sudo mkdir -p /opt/deepcool-digital
+$ sudo cp target/release/deepcool-digital-linux /opt/deepcool-digital/
+$ sudo chmod +x /opt/deepcool-digital/deepcool-digital-linux
 
-Setup systemd service
+### Setup systemd service
 
-Create /etc/systemd/system/deepcool.service:
+Create `/etc/systemd/system/deepcool.service` with:
 
 [Unit]
 Description=DeepCool CH170 Display Service
@@ -42,22 +41,45 @@ User=root
 [Install]
 WantedBy=multi-user.target
 
-Enable and start service:
+Enable and start the service:
 
-sudo systemctl daemon-reload
-sudo systemctl enable deepcool.service
-sudo systemctl start deepcool.service
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable deepcool.service
+$ sudo systemctl start deepcool.service
 
-Troubleshooting
+## Troubleshooting
 
-    Ensure nvidia-smi is installed and in your PATH for GPU info.
+- Ensure `nvidia-smi` is installed and in your PATH for GPU info.
+- Make sure kernel module `k10temp` is loaded for CPU temperature.
+- Run the program with `sudo` to access USB device permissions.
 
-    Make sure kernel module k10temp is loaded for CPU temperature.
+---
 
-    Run the program with sudo to access USB device permissions.
-
-.gitignore example for Rust
+## .gitignore example for Rust
 
 /target
 **/*.rs.bk
 Cargo.lock
+
+---
+
+## How to push your local code to GitHub:
+
+1. Initialize repo if not done:
+
+$ git init
+$ git remote add origin https://github.com/Saltyfunnel/deepcool-digital-linux.git
+
+2. Add files and commit:
+
+$ git add .
+$ git commit -m "Initial commit with DeepCool Digital Linux custom scripts"
+
+3. Push to GitHub:
+
+$ git branch -M main
+$ git push -u origin main
+
+---
+
+If you want, I can help you with any automation scripts or further instructions. Just ask!
